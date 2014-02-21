@@ -31,7 +31,7 @@
     loginView.center = self.view.center;
     
     loginView.delegate = self;
-    
+    self.title = @"Drinking Buddies";
     [self.view addSubview:loginView];
 }
 
