@@ -8,7 +8,14 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController ()
+#import "Venue.h"
+#import "BarfinderAPIManager.h"
+#import "BarfinderAPICommunicator.h"
+
+@interface MapViewController () <BarfinderAPIManagerDelegate> {
+    NSArray *_venues;
+    BarfinderAPIManager *_manager;
+}
 
 @end
 
@@ -29,6 +36,20 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     
+    
+    
+    //ADD ALL BARS
+    _manager = [[BarfinderAPIManager alloc] init];
+    _manager.communicator = [[BarfinderAPICommunicator alloc] init];
+    _manager.communicator.delegate = _manager;
+    _manager.delegate = self;
+    
+    [_manager fetchVenues];
+    
+    
+    
+    
+    
     //add bar
     MKPointAnnotation *bar = [[MKPointAnnotation alloc] init];
     CLLocationCoordinate2D pinCoordinate;
@@ -41,6 +62,30 @@
     
     
     
+}
+
+- (void)didReceiveVenues:(NSArray *)venues
+{
+    _venues = venues;
+    //iterate through and add marker for each
+    for (id venue in _venues) {
+        MKPointAnnotation *bar = [[MKPointAnnotation alloc] init];
+        CLLocationCoordinate2D pinCoordinate;
+        pinCoordinate.latitude = [[venue valueForKey:@"lat"] floatValue];
+        pinCoordinate.longitude = [[venue valueForKey:@"lng"] floatValue];
+        bar.coordinate = pinCoordinate;
+        bar.title = [venue valueForKey:@"name"];
+        bar.subtitle = @"get drunk";
+        [self.mapView addAnnotation:bar];
+    }
+    
+    
+    //[self.tableView reloadData];
+}
+
+- (void)fetchingVenueFailedWithError:(NSError *)error
+{
+    NSLog(@"Error %@; %@", error, [error localizedDescription]);
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
