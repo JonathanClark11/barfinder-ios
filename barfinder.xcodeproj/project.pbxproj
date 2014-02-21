@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		595FE2A718B6FF2300E5D6A6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */; };
 		EBDF3B7D18B56A3C00A8C6C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF3B7C18B56A3C00A8C6C1 /* Foundation.framework */; };
 		EBDF3B7F18B56A3C00A8C6C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF3B7E18B56A3C00A8C6C1 /* CoreGraphics.framework */; };
 		EBDF3B8118B56A3C00A8C6C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF3B8018B56A3C00A8C6C1 /* UIKit.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		EBDF3B7918B56A3C00A8C6C1 /* barfinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barfinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDF3B7C18B56A3C00A8C6C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBDF3B7E18B56A3C00A8C6C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				595FE2A718B6FF2300E5D6A6 /* FacebookSDK.framework in Frameworks */,
 				EBDF3B7F18B56A3C00A8C6C1 /* CoreGraphics.framework in Frameworks */,
 				EBDF3B8118B56A3C00A8C6C1 /* UIKit.framework in Frameworks */,
 				EBDF3B7D18B56A3C00A8C6C1 /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		EBDF3B7B18B56A3C00A8C6C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */,
 				EBDF3B7C18B56A3C00A8C6C1 /* Foundation.framework */,
 				EBDF3B7E18B56A3C00A8C6C1 /* CoreGraphics.framework */,
 				EBDF3B8018B56A3C00A8C6C1 /* UIKit.framework */,
@@ -392,6 +396,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jonclark/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "barfinder/barfinder-Prefix.pch";
 				INFOPLIST_FILE = "barfinder/barfinder-Info.plist";
@@ -405,6 +413,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jonclark/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "barfinder/barfinder-Prefix.pch";
 				INFOPLIST_FILE = "barfinder/barfinder-Info.plist";
@@ -474,6 +486,7 @@
 				EBDF3BB018B56A3C00A8C6C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBDF3BB118B56A3C00A8C6C1 /* Build configuration list for PBXNativeTarget "barfinderTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +495,7 @@
 				EBDF3BB318B56A3C00A8C6C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -5,6 +5,8 @@
 //  Created by Stephen Richter on 2/19/2014.
 //  Copyright (c) 2014 Millennial Group. All rights reserved.
 //
+//  Authors:    Stephen Richter
+//              Jonathan Clark
 
 #import "AppDelegate.h"
 
@@ -12,6 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [FBLoginView class];
     // Override point for customization after application launch.
     return YES;
 }
@@ -41,6 +44,19 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
 }
 
 @end
