@@ -14,7 +14,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Define Facebook Classes
     [FBLoginView class];
+    [FBProfilePictureView class];
+    [FBFriendPickerViewController class];
+    
     // Override point for customization after application launch.
     return YES;
 }
