@@ -36,7 +36,7 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     
-    
+    self.title = @"Venues Near Me";
     
     //ADD ALL BARS
     _manager = [[BarfinderAPIManager alloc] init];
@@ -45,22 +45,6 @@
     _manager.delegate = self;
     
     [_manager fetchVenues];
-    
-    
-    
-    
-    
-    //add bar
-    MKPointAnnotation *bar = [[MKPointAnnotation alloc] init];
-    CLLocationCoordinate2D pinCoordinate;
-    pinCoordinate.latitude = 49.122;
-    pinCoordinate.longitude = -123.145;
-    bar.coordinate = pinCoordinate;
-    bar.title = @"Vancouver Bar";
-    bar.subtitle = @"get drunk";
-    [self.mapView addAnnotation:bar];
-    
-    
     
 }
 

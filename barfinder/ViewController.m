@@ -19,6 +19,7 @@
 @synthesize loginView;
 @synthesize nameLabel;
 @synthesize profilePictureView;
+@synthesize status;
 
 - (void)viewDidLoad
 {
@@ -31,8 +32,39 @@
     loginView.center = self.view.center;
     
     loginView.delegate = self;
-    self.title = @"Drinking Buddies";
+    
     [self.view addSubview:loginView];
+}
+
+- (IBAction)statusButtonClick:(id)sender
+{
+    // Status Picker View
+    UIPickerView *pickerView = [[UIPickerView alloc] init];
+    pickerView.dataSource = self;
+    pickerView.delegate = self;
+    pickerView.showsSelectionIndicator = YES;
+    pickerView.backgroundColor = [UIColor clearColor];
+    self.theData = @[@"One",@"Two",@"Three",@"Four"];
+    
+    [self.view addSubview:pickerView];
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return self.theData.count;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return self.theData[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    [self.status setTitle:self.theData[row] forState:UIControlStateNormal];
+    //[self.status resignFirstResponder];
+    [pickerView removeFromSuperview];
 }
 
 // This method will be called when the user information has been fetched
@@ -41,6 +73,7 @@
     
     self.profilePictureView.profileID = user.id;
     self.nameLabel.text = user.name;
+    // [self.relationship setTitle:user.gender forState:UIControlStateNormal];
     
 }
 
