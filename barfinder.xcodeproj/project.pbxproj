@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		595FE2A718B6FF2300E5D6A6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */; };
+		EB53CB1818B81A6600E84F3C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */; };
+		EB53CB1A18B81A6C00E84F3C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB53CB1918B81A6C00E84F3C /* CoreLocation.framework */; };
+		EB53CB1C18B81A7100E84F3C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB53CB1B18B81A7100E84F3C /* MapKit.framework */; };
+		EB53CB2518B81AE800E84F3C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53CB1E18B81AE800E84F3C /* MapViewController.m */; };
+		EB53CB2618B81AE800E84F3C /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53CB2018B81AE800E84F3C /* Venue.m */; };
+		EB53CB2718B81AE800E84F3C /* VenueBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53CB2218B81AE800E84F3C /* VenueBuilder.m */; };
+		EB53CB2F18B81AF000E84F3C /* BarfinderAPICommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53CB2B18B81AF000E84F3C /* BarfinderAPICommunicator.m */; };
+		EB53CB3018B81AF000E84F3C /* BarfinderAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53CB2D18B81AF000E84F3C /* BarfinderAPIManager.m */; };
+		EB53CB3318B83BB000E84F3C /* ChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53CB3218B83BB000E84F3C /* ChatroomViewController.m */; };
 		EBDF3B7D18B56A3C00A8C6C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF3B7C18B56A3C00A8C6C1 /* Foundation.framework */; };
 		EBDF3B7F18B56A3C00A8C6C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF3B7E18B56A3C00A8C6C1 /* CoreGraphics.framework */; };
 		EBDF3B8118B56A3C00A8C6C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF3B8018B56A3C00A8C6C1 /* UIKit.framework */; };
@@ -37,6 +45,22 @@
 
 /* Begin PBXFileReference section */
 		595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		EB53CB1918B81A6C00E84F3C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EB53CB1B18B81A7100E84F3C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EB53CB1D18B81AE800E84F3C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		EB53CB1E18B81AE800E84F3C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		EB53CB1F18B81AE800E84F3C /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		EB53CB2018B81AE800E84F3C /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		EB53CB2118B81AE800E84F3C /* VenueBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueBuilder.h; sourceTree = "<group>"; };
+		EB53CB2218B81AE800E84F3C /* VenueBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueBuilder.m; sourceTree = "<group>"; };
+		EB53CB2918B81AF000E84F3C /* BarfinderAPICommDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarfinderAPICommDelegate.h; sourceTree = "<group>"; };
+		EB53CB2A18B81AF000E84F3C /* BarfinderAPICommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarfinderAPICommunicator.h; sourceTree = "<group>"; };
+		EB53CB2B18B81AF000E84F3C /* BarfinderAPICommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarfinderAPICommunicator.m; sourceTree = "<group>"; };
+		EB53CB2C18B81AF000E84F3C /* BarfinderAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarfinderAPIManager.h; sourceTree = "<group>"; };
+		EB53CB2D18B81AF000E84F3C /* BarfinderAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarfinderAPIManager.m; sourceTree = "<group>"; };
+		EB53CB2E18B81AF000E84F3C /* BarfinderAPIManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarfinderAPIManagerDelegate.h; sourceTree = "<group>"; };
+		EB53CB3118B83BB000E84F3C /* ChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomViewController.h; sourceTree = "<group>"; };
+		EB53CB3218B83BB000E84F3C /* ChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatroomViewController.m; sourceTree = "<group>"; };
 		EBDF3B7918B56A3C00A8C6C1 /* barfinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barfinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDF3B7C18B56A3C00A8C6C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBDF3B7E18B56A3C00A8C6C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,7 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				595FE2A718B6FF2300E5D6A6 /* FacebookSDK.framework in Frameworks */,
+				EB53CB1C18B81A7100E84F3C /* MapKit.framework in Frameworks */,
+				EB53CB1A18B81A6C00E84F3C /* CoreLocation.framework in Frameworks */,
+				EB53CB1818B81A6600E84F3C /* FacebookSDK.framework in Frameworks */,
 				EBDF3B7F18B56A3C00A8C6C1 /* CoreGraphics.framework in Frameworks */,
 				EBDF3B8118B56A3C00A8C6C1 /* UIKit.framework in Frameworks */,
 				EBDF3B7D18B56A3C00A8C6C1 /* Foundation.framework in Frameworks */,
@@ -106,6 +132,8 @@
 		EBDF3B7B18B56A3C00A8C6C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB53CB1B18B81A7100E84F3C /* MapKit.framework */,
+				EB53CB1918B81A6C00E84F3C /* CoreLocation.framework */,
 				595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */,
 				EBDF3B7C18B56A3C00A8C6C1 /* Foundation.framework */,
 				EBDF3B7E18B56A3C00A8C6C1 /* CoreGraphics.framework */,
@@ -120,10 +148,24 @@
 			children = (
 				EBDF3B8B18B56A3C00A8C6C1 /* AppDelegate.h */,
 				EBDF3B8C18B56A3C00A8C6C1 /* AppDelegate.m */,
+				EB53CB2918B81AF000E84F3C /* BarfinderAPICommDelegate.h */,
+				EB53CB2A18B81AF000E84F3C /* BarfinderAPICommunicator.h */,
+				EB53CB2B18B81AF000E84F3C /* BarfinderAPICommunicator.m */,
+				EB53CB2C18B81AF000E84F3C /* BarfinderAPIManager.h */,
+				EB53CB2D18B81AF000E84F3C /* BarfinderAPIManager.m */,
+				EB53CB2E18B81AF000E84F3C /* BarfinderAPIManagerDelegate.h */,
+				EB53CB3118B83BB000E84F3C /* ChatroomViewController.h */,
+				EB53CB3218B83BB000E84F3C /* ChatroomViewController.m */,
 				EBDF3B8E18B56A3C00A8C6C1 /* Main_iPhone.storyboard */,
 				EBDF3B9118B56A3C00A8C6C1 /* Main_iPad.storyboard */,
 				EBDF3B9418B56A3C00A8C6C1 /* ViewController.h */,
 				EBDF3B9518B56A3C00A8C6C1 /* ViewController.m */,
+				EB53CB1D18B81AE800E84F3C /* MapViewController.h */,
+				EB53CB1E18B81AE800E84F3C /* MapViewController.m */,
+				EB53CB1F18B81AE800E84F3C /* Venue.h */,
+				EB53CB2018B81AE800E84F3C /* Venue.m */,
+				EB53CB2118B81AE800E84F3C /* VenueBuilder.h */,
+				EB53CB2218B81AE800E84F3C /* VenueBuilder.m */,
 				EBDF3B9718B56A3C00A8C6C1 /* Images.xcassets */,
 				EBDF3B8318B56A3C00A8C6C1 /* Supporting Files */,
 			);
@@ -257,9 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB53CB3018B81AF000E84F3C /* BarfinderAPIManager.m in Sources */,
 				EBDF3B9618B56A3C00A8C6C1 /* ViewController.m in Sources */,
+				EB53CB3318B83BB000E84F3C /* ChatroomViewController.m in Sources */,
+				EB53CB2718B81AE800E84F3C /* VenueBuilder.m in Sources */,
 				EBDF3B8D18B56A3C00A8C6C1 /* AppDelegate.m in Sources */,
 				EBDF3B8918B56A3C00A8C6C1 /* main.m in Sources */,
+				EB53CB2F18B81AF000E84F3C /* BarfinderAPICommunicator.m in Sources */,
+				EB53CB2618B81AE800E84F3C /* Venue.m in Sources */,
+				EB53CB2518B81AE800E84F3C /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +447,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jonclark/Documents/FacebookSDK,
+					/Users/stephenrichter/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "barfinder/barfinder-Prefix.pch";
@@ -416,6 +465,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jonclark/Documents/FacebookSDK,
+					/Users/stephenrichter/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "barfinder/barfinder-Prefix.pch";
