@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChatroomViewController : UIViewController
+@interface ChatroomViewController : UIViewController <NSStreamDelegate, UITableViewDelegate, UITableViewDataSource> {
+    
+    NSInputStream *inputStream;
+    NSOutputStream *outputStream;
+    
+    NSMutableArray *messages;
+    
+}
+
+@property(nonatomic,retain) NSInputStream * inputStream;
+@property(nonatomic,retain) NSOutputStream * outputStream;
+
+
+- (void)initNetworkCommunication;
+- (IBAction)joinChat:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *inputMessageField;
+@property (weak, nonatomic) IBOutlet UITableView *tView;
+- (IBAction)sendMessage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *chatView;
+
 
 @end
