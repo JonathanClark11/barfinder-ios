@@ -31,11 +31,35 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // For keyboard push animation
+    self.originalCenter = self.view.center;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    
     [self initNetworkCommunication];
     
     [self joinChat:nil];
     
     messages = [[NSMutableArray alloc] init];
+}
+
+// Keyboard Scroll
+- (NSInteger)getKeyBoardHeight:(NSNotification *)notification
+{
+    NSDictionary* keyboardInfo = [notification userInfo];
+    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+    CGRect keyboardFrameBeginRect = [keyboardFrameBegin CGRectValue];
+    NSInteger keyboardHeight = keyboardFrameBeginRect.size.height;
+    return keyboardHeight;
+}
+
+- (void)keyboardDidShow:(NSNotification *)note
+{
+    self.view.center = CGPointMake(self.originalCenter.x, (self.originalCenter.x + [self getKeyBoardHeight:nil]));
+}
+
+- (void)keyboardDidHide:(NSNotification *)note
+{
+    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y);
 }
 
 - (void)initNetworkCommunication {
@@ -63,10 +87,29 @@
     
 }
 
+- (IBAction)createRoom:(id)sender {
+    
+	NSString *response  = @"new:Nightclub";
+	NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
+	[outputStream write:[data bytes] maxLength:[data length]];
+    
+}
+
+- (IBAction)joinRoom:(id)sender {
+    
+	NSString *response  = @"enter:Nightclub";
+	NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
+	[outputStream write:[data bytes] maxLength:[data length]];
+    
+}
+
 - (IBAction)sendMessage:(id)sender {
     NSString *response  = [NSString stringWithFormat:@"msg:%@", inputMessageField.text];
 	NSData *data = [[NSData alloc] initWithData:[response dataUsingEncoding:NSASCIIStringEncoding]];
 	[outputStream write:[data bytes] maxLength:[data length]];
+    
+    // Clear the text field
+    inputMessageField.text = @"";
 }
 
 // Table View Handlers
@@ -130,6 +173,10 @@
 			break;
             
 		case NSStreamEventEndEncountered:
+            
+            [theStream close];
+            [theStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+            
 			break;
             
 		default:
@@ -142,6 +189,10 @@
     
 	[messages addObject:message];
 	[self.tView reloadData];
+    
+    NSIndexPath *topIndexPath =
+    [NSIndexPath indexPathForRow:messages.count-1 inSection:0];
+    [self.tView scrollToRowAtIndexPath:topIndexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     
 }
 

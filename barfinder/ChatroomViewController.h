@@ -23,11 +23,15 @@
 
 - (void)initNetworkCommunication;
 - (IBAction)joinChat:(id)sender;
+- (IBAction)createRoom:(id)sender;
+- (IBAction)joinRoom:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *inputMessageField;
 @property (weak, nonatomic) IBOutlet UITableView *tView;
 - (IBAction)sendMessage:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *chatView;
+
+@property(assign) CGPoint originalCenter;
 
 
 @end
