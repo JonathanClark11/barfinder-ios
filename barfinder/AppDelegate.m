@@ -18,7 +18,7 @@
     [FBLoginView class];
     [FBProfilePictureView class];
     [FBFriendPickerViewController class];
-    
+
     // Override point for customization after application launch.
     return YES;
 }

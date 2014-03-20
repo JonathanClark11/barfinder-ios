@@ -8,6 +8,6 @@
 
 #import "JASidePanelController.h"
 
-@interface MySidePanelController : JASidePanelController
-
+@interface RootViewController : JASidePanelController
+    
 @end

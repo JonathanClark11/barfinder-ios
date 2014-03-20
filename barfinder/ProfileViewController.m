@@ -8,13 +8,13 @@
 //  Authors:    Stephen Richter
 //              Jonathan Clark
 
-#import "ViewController.h"
+#import "ProfileViewController.h"
 
-@interface ViewController ()
+@interface ProfileViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ProfileViewController
 
 @synthesize loginView;
 @synthesize nameLabel;

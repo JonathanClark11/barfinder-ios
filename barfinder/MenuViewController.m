@@ -13,6 +13,8 @@
 @end
 
 @implementation MenuViewController
+@synthesize menuTable;
+@synthesize menuDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,21 +32,49 @@
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    if ([cell.reuseIdentifier isEqualToString:@"Home"])
-    {
-        
-        UIAlertView *messageAlert = [[UIAlertView alloc]
-                                     initWithTitle:@"Row Selected" message:@"You've selected a row" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
-        // Display Alert Message
-        [messageAlert show];
-        
-    }
 
+
+
+
+#pragma mark Table view methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 3;
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    switch ([indexPath row]) {
+        case 0:
+            cell.textLabel.text = @"Home";
+            break;
+        case 1:
+            cell.textLabel.text = @"Profile";
+            break;
+        case 2:
+            cell.textLabel.text = @"Settings";
+            break;
+    }
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self.menuDelegate MenuItemSelected:cell.textLabel.text];
 }
 
 - (void)didReceiveMemoryWarning

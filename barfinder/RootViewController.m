@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Millennial Group. All rights reserved.
 //
 
-#import "MySidePanelController.h"
+#import "RootViewController.h"
 
-@interface MySidePanelController ()
+@interface RootViewController ()
 
 @end
 
-@implementation MySidePanelController
+@implementation RootViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

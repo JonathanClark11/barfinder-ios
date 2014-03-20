@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FacebookSDK/FacebookSDK.h"
 
-@interface ViewController : UIViewController
+@interface ProfileViewController : UIViewController
 
 @property(nonatomic,retain) IBOutlet FBLoginView *loginView;
 
