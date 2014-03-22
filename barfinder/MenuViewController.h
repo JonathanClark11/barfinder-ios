@@ -9,14 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
-#import "MenuDelegate.h"
-
-#import "ProfileViewController.h"
-#import "MapViewController.h"
 
 @interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView* menuTable;
 }
-@property (weak, nonatomic)  id <MenuDelegate> menuDelegate;
 @property (nonatomic, retain) UITableView* menuTable;
 @end

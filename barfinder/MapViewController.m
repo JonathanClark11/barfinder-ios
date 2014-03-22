@@ -48,6 +48,16 @@
     
 }
 
+- (void) MenuItemSelected: (NSString*) item
+{
+    if ([item isEqualToString:@"Home"]) {
+        [self performSegueWithIdentifier: @"mapViewController" sender: self];
+    } else if ([item isEqualToString:@"Profile"]) {
+        [self performSegueWithIdentifier: @"profileSegue" sender: self];
+        [self.sidePanelController showCenterPanelAnimated:YES];
+    }
+}
+
 - (void)didReceiveVenues:(NSArray *)venues
 {
     _venues = venues;

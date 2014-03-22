@@ -10,6 +10,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
+#import "MenuViewController.h"
+#import "RootViewController.h"
+
 @interface MapViewController : UIViewController
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)getCurrentLocation:(id)sender;

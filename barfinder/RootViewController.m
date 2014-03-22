@@ -32,7 +32,7 @@
 -(void) awakeFromNib
 {
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
-    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
+    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"mapView"]];
     //[self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
 }
 

@@ -14,7 +14,6 @@
 
 @implementation MenuViewController
 @synthesize menuTable;
-@synthesize menuDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -74,7 +73,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self.menuDelegate MenuItemSelected:cell.textLabel.text];
+    NSString *cellText = cell.textLabel.text;
+    if (cellText == @"Home") {
+        [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"mapView"]];
+    } else if (cellText == @"Profile") {
+        [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"profileView"]];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
