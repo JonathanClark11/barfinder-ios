@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Venue : NSObject
-@property (nonatomic, assign) NSInteger *vid;
+@property (nonatomic, assign) NSString *venueid;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSNumber *lat;
 @property (nonatomic, retain) NSNumber *lng;
 @property (strong, nonatomic) NSString *address;
+@property (nonatomic, retain) NSString *type;
 @end

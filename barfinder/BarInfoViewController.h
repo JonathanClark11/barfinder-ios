@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BarInfoViewController : UIViewController {
-    
-}
+@interface BarInfoViewController : UIViewController
 
+@property (nonatomic, retain) NSString *venueid;
+@property (weak, nonatomic) IBOutlet UILabel *venueName;
+@property (nonatomic, retain) IBOutlet UILabel *venueAddress;
+@property (weak, nonatomic) IBOutlet UILabel *venueDescription;
+@property (weak, nonatomic) IBOutlet UILabel *venueEvents;
+@property (weak, nonatomic) IBOutlet UILabel *venueCover;
+@property (weak, nonatomic) IBOutlet UIImageView *venueLogo;
 @end

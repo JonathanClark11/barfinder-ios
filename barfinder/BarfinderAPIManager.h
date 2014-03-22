@@ -17,4 +17,5 @@
 @property (weak, nonatomic) id<BarfinderAPIManagerDelegate> delegate;
 
 - (void)fetchVenues;
+- (void)fetchVenueInfo:(NSString*)vid;
 @end

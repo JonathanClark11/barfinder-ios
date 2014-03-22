@@ -11,4 +11,7 @@
 @protocol BarfinderAPICommDelegate
 - (void)receivedVenuesJSON:(NSData *)objectNotation;
 - (void)fetchingVenuesFailedWithError:(NSError *)error;
+
+- (void)receivedVenueInfoJSON:(NSData *)objectNotation;
+- (void)fetchingVenueInfoFailedWithError:(NSError *)error;
 @end

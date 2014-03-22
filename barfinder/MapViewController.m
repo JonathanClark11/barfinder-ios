@@ -9,6 +9,9 @@
 #import "MapViewController.h"
 
 #import "Venue.h"
+#import "VenueAnnotation.h"
+#import "BarInfoViewController.h"
+
 #import "BarfinderAPIManager.h"
 #import "BarfinderAPICommunicator.h"
 
@@ -48,33 +51,54 @@
     
 }
 
-- (void) MenuItemSelected: (NSString*) item
-{
-    if ([item isEqualToString:@"Home"]) {
-        [self performSegueWithIdentifier: @"mapViewController" sender: self];
-    } else if ([item isEqualToString:@"Profile"]) {
-        [self performSegueWithIdentifier: @"profileSegue" sender: self];
-        [self.sidePanelController showCenterPanelAnimated:YES];
-    }
-}
-
 - (void)didReceiveVenues:(NSArray *)venues
 {
     _venues = venues;
     //iterate through and add marker for each
     for (id venue in _venues) {
-        MKPointAnnotation *bar = [[MKPointAnnotation alloc] init];
+        VenueAnnotation *bar = [[VenueAnnotation alloc] init];
         CLLocationCoordinate2D pinCoordinate;
         pinCoordinate.latitude = [[venue valueForKey:@"lat"] floatValue];
         pinCoordinate.longitude = [[venue valueForKey:@"lng"] floatValue];
         bar.coordinate = pinCoordinate;
         bar.title = [venue valueForKey:@"name"];
-        bar.subtitle = @"get drunk";
+        bar.subtitle = [NSString stringWithFormat:@"%@ - %@", [venue valueForKey:@"type"], [venue valueForKey:@"address"]];
+        bar.venueid = [venue valueForKey:@"venueid"];
         [self.mapView addAnnotation:bar];
     }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView2 viewForAnnotation:(id <MKAnnotation>)annotation {
     
-    
-    //[self.tableView reloadData];
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    if ([annotation isKindOfClass:[VenueAnnotation class]])
+    {
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView2 dequeueReusableAnnotationViewWithIdentifier:@"String"];
+        if(!annotationView) {
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"String"];
+            annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        }
+        annotationView.enabled = YES;
+        annotationView.canShowCallout = YES;
+        return annotationView;
+    }
+    return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    VenueAnnotation *venue = (VenueAnnotation*)[view annotation];
+    [self performSegueWithIdentifier:@"viewVenueInfo" sender:venue];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"viewVenueInfo"])
+    {
+        VenueAnnotation *venue = (VenueAnnotation*)sender;
+        BarInfoViewController *vc = [segue destinationViewController];
+        vc.venueid = venue.venueid;
+    }
 }
 
 - (void)fetchingVenueFailedWithError:(NSError *)error

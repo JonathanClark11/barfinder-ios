@@ -13,5 +13,5 @@
 @interface BarfinderAPICommunicator : NSObject
 @property (weak, nonatomic) id<BarfinderAPICommDelegate> delegate;
 - (void)getVenues;
-//- (void)searchGroupsAtCoordinate:(CLLocationCoordinate2D)coordinate;
+- (void)getVenueInfo:(NSString*)vid;
 @end

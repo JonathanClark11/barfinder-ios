@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VenueInfo.h"
 
 @protocol BarfinderAPIManagerDelegate
 - (void)didReceiveVenues:(NSArray *)venues;
 - (void)fetchingVenuesFailedWithError:(NSError *)error;
+
+- (void)didReceiveVenueInfo:(VenueInfo *)venue;
+- (void)fetchingVenueInfoFailedWithError:(NSError *)error;
 @end

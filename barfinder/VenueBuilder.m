@@ -24,19 +24,23 @@
     
     NSArray *results = [parsedObject valueForKey:@"bars"];
     NSLog(@"Count %d", results.count);
-    
-    for (NSDictionary *venueDic in results) {
-        Venue *venue = [[Venue alloc] init];
-        
-        for (NSString *key in venueDic) {
-            if ([venue respondsToSelector:NSSelectorFromString(key)]) {
-                [venue setValue:[venueDic valueForKey:key] forKey:key];
+    @try{
+        for (NSDictionary *venueDic in results) {
+            Venue *venue = [[Venue alloc] init];
+            
+            for (NSString *key in venueDic) {
+                if ([key isEqualToString:@"id"]) {
+                    venue.venueid = [venueDic valueForKey:key];
+                } else if ([venue respondsToSelector:NSSelectorFromString(key)]) {
+                    [venue setValue:[venueDic valueForKey:key] forKey:key];
+                }
             }
+            
+            [venues addObject:venue];
         }
-        
-        [venues addObject:venue];
+    }@catch (NSException *e) {
+        NSLog(@"JSON ERROR");
     }
-    
     return venues;
 }
 @end

@@ -8,13 +8,18 @@
 
 #import "BarfinderAPIManager.h"
 #import "VenueBuilder.h"
+#import "VenueInfoBuilder.h"
 #import "BarfinderAPICommunicator.h"
-
+#import "VenueInfo.h"
 @implementation BarfinderAPIManager
 
 - (void)fetchVenues
 {
     [self.communicator getVenues];
+}
+- (void)fetchVenueInfo:(NSString*)vid
+{
+    [self.communicator getVenueInfo:vid];
 }
 
 #pragma mark - BarfinderAPICommunicatorDelegate
@@ -31,9 +36,26 @@
     }
 }
 
-- (void)fetchingGroupsFailedWithError:(NSError *)error
+- (void)fetchingVenuesFailedWithError:(NSError *)error
 {
     [self.delegate fetchingVenuesFailedWithError:error];
+}
+
+- (void)receivedVenueInfoJSON:(NSData *)objectNotation
+{
+    NSError *error = nil;
+    VenueInfo *venue = [VenueInfoBuilder venueInfoFromJSON:objectNotation error:&error];
+    
+    if (error != nil) {
+        [self.delegate fetchingVenueInfoFailedWithError:error];
+    } else {
+        [self.delegate didReceiveVenueInfo:venue];
+    }
+}
+
+- (void)fetchingVenueInfoFailedWithError:(NSError *)error
+{
+    [self.delegate fetchingVenueInfoFailedWithError:error];
 }
 
 @end

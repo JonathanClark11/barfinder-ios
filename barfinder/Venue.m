@@ -10,9 +10,9 @@
 
 @implementation Venue
 @synthesize name;
-@synthesize vid;
+@synthesize venueid;
 @synthesize lat;
 @synthesize lng;
 @synthesize address;
-
+@synthesize type;
 @end

@@ -25,4 +25,20 @@
         }
     }];
 }
+
+- (void)getVenueInfo:(NSString*)vid
+{
+    NSString *urlAsString = [NSString stringWithFormat:@"http://api.youqueue.ca/bars/%@", vid];
+    NSURL *url = [[NSURL alloc] initWithString:urlAsString];
+    NSLog(@"%@", urlAsString);
+    
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        if (error) {
+            [self.delegate fetchingVenueInfoFailedWithError:error];
+        } else {
+            [self.delegate receivedVenueInfoJSON:data];
+        }
+    }];
+}
 @end
