@@ -33,7 +33,7 @@
 {
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
     [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"mapView"]];
-    //[self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
+    [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
 }
 
 - (void)didReceiveMemoryWarning

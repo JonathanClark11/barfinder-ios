@@ -1,19 +1,15 @@
 //
-//  MenuViewController.m
+//  rightPanelViewController.m
 //  barfinder
 //
-//  Created by Stephen Richter on 2/28/2014.
+//  Created by Jonathan Clark on 2014-03-24.
 //  Copyright (c) 2014 Millennial Group. All rights reserved.
 //
 
-#import "MenuViewController.h"
+#import "rightPanelViewController.h"
 
-@interface MenuViewController ()
-
-@end
-
-@implementation MenuViewController
-@synthesize menuTable;
+@implementation rightPanelViewController
+@synthesize chatroomTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,7 +39,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 6;
+	return 3;
 }
 
 // Customize the appearance of table view cells.
@@ -57,22 +53,16 @@
     }
     switch ([indexPath row]) {
         case 0:
-            cell.textLabel.text = @"Home";
+            cell.textLabel.text = @"Chatroom 1";
+            cell.textLabel.textAlignment = NSTextAlignmentRight;
             break;
         case 1:
-            cell.textLabel.text = @"Profile";
+            cell.textLabel.text = @"Chatroom 2";
+            cell.textLabel.textAlignment = NSTextAlignmentRight;
             break;
         case 2:
-            cell.textLabel.text = @"Buddies";
-            break;
-        case 3:
-            cell.textLabel.text = @"Places";
-            break;
-        case 4:
-            cell.textLabel.text = @"Achievements";
-            break;
-        case 5:
-            cell.textLabel.text = @"Logout";
+            cell.textLabel.text = @"Chatroom 3";
+            cell.textLabel.textAlignment = NSTextAlignmentRight;
             break;
     }
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
@@ -83,20 +73,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = cell.textLabel.text;
-    if (cellText == @"Home") {
-        [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"mapView"]];
-    } else if (cellText == @"Profile") {
-        [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"profileView"]];
-    } else if (cellText == @"Buddies") {
-
-    } else if (cellText == @"Places") {
-
-    } else if (cellText == @"Achievements") {
-
-    } else if (cellText == @"Logout") {
-
-    }
-
+    //TODO: ENTER CHATROOM
+    //check chatroom id and open the jsmessages view
+    [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"chatroomView"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,5 +83,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
