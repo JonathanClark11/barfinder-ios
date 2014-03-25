@@ -1,6 +1,7 @@
 from twisted.internet.protocol import Protocol, Factory
 from twisted.internet import reactor
 import pdb
+import pprint
 
 class IphoneChat(Protocol):
 	def connectionMade(self):
@@ -12,7 +13,6 @@ class IphoneChat(Protocol):
 	    self.factory.clients.remove(self)
 	    print "clients are ", self.factory.clients
 	
-	# TODO: PARSE BUFFERED PACKETS
 	def dataReceived(self, data):
 		print "data is " + data
 		dataarr = data.split('\r\n');
@@ -30,7 +30,7 @@ class IphoneChat(Protocol):
 				#msg:room:message
 				elif command == "msg":
 					if (a[1] in chatrooms.keys()):
-						if (self.name in chatrooms[a[1]]):
+						if (self in chatrooms[a[1]]):
 							room = a[1]
 							msg = "msg:" + self.name + ":" + room + ":" + a[2] + "\n"
 						else:
@@ -51,7 +51,8 @@ class IphoneChat(Protocol):
 				elif command == "enter":
 					room = a[1]
 					msg = self.name + " has entered " + content
-					chatrooms[content].append(self.name)
+					print(self)
+					chatrooms[content].append(self)
 
 				print msg
 				if (room is None):
@@ -61,8 +62,8 @@ class IphoneChat(Protocol):
 					#room is set, send the message to everybody in that room
 					for user in chatrooms[room]:
 						for c in self.factory.clients:
-							if (c.name == user):
-								print "\nSending message to " + user
+							if (c == user):
+								print "\nSending message to " + user.name
 								c.message(msg)
 							
 				
@@ -77,6 +78,6 @@ factory.clients = []
 chatrooms = {};
 
 reactor.listenTCP(80, factory)
-print "Iphone Chat server started"
+print "iPhone Chat server started"
 reactor.run()
 
