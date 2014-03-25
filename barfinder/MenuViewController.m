@@ -83,17 +83,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *cellText = cell.textLabel.text;
-    if (cellText == @"Home") {
+    if ([cellText isEqualToString:@"Home"]) {
         [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"mapView"]];
-    } else if (cellText == @"Profile") {
+    } else if ([cellText isEqualToString:@"Profile"]) {
         [self.sidePanelController setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"profileView"]];
-    } else if (cellText == @"Buddies") {
+    } else if ([cellText isEqualToString:@"Buddies"]) {
 
-    } else if (cellText == @"Places") {
+    } else if ([cellText isEqualToString:@"Places"]) {
 
-    } else if (cellText == @"Achievements") {
+    } else if ([cellText isEqualToString:@"Achievements"]) {
 
-    } else if (cellText == @"Logout") {
+    } else if ([cellText isEqualToString:@"Logout"]) {
 
     }
 
