@@ -13,6 +13,7 @@
 		590AF84618DD40CD0008933C /* VenueAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF84518DD40CD0008933C /* VenueAnnotation.m */; };
 		591F0D8018DA70A7008F19A7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591F0D7C18DA70A7008F19A7 /* RootViewController.m */; };
 		591F0D8118DA70A7008F19A7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591F0D7E18DA70A7008F19A7 /* MenuViewController.m */; };
+		594315F818E35D32001B48C3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594315F718E35D32001B48C3 /* LoginViewController.m */; };
 		596DBE1918CF3B89007B66CC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596DBE1818CF3B89007B66CC /* PhotoViewController.m */; };
 		596DBE1D18CF463A007B66CC /* BarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596DBE1C18CF463A007B66CC /* BarInfoViewController.m */; };
 		59E9309618E0AAA100FE33B3 /* rightPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E9309518E0AAA100FE33B3 /* rightPanelViewController.m */; };
@@ -66,6 +67,8 @@
 		591F0D7D18DA70A7008F19A7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		591F0D7E18DA70A7008F19A7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		591F0D7F18DA70A7008F19A7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		594315F618E35D32001B48C3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		594315F718E35D32001B48C3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		596DBE1718CF3B89007B66CC /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		596DBE1818CF3B89007B66CC /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 				EBDF3B8318B56A3C00A8C6C1 /* Supporting Files */,
 				590AF84418DD40CD0008933C /* VenueAnnotation.h */,
 				590AF84518DD40CD0008933C /* VenueAnnotation.m */,
+				594315F618E35D32001B48C3 /* LoginViewController.h */,
+				594315F718E35D32001B48C3 /* LoginViewController.m */,
 			);
 			path = barfinder;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				EBDF3B9618B56A3C00A8C6C1 /* ProfileViewController.m in Sources */,
 				590AF84318DD34780008933C /* VenueInfoBuilder.m in Sources */,
 				EB53CB3318B83BB000E84F3C /* ChatroomViewController.m in Sources */,
+				594315F818E35D32001B48C3 /* LoginViewController.m in Sources */,
 				590AF84018DD324D0008933C /* VenueInfo.m in Sources */,
 				EB53CB2718B81AE800E84F3C /* VenueBuilder.m in Sources */,
 				591F0D8118DA70A7008F19A7 /* MenuViewController.m in Sources */,
