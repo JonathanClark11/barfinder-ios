@@ -26,8 +26,8 @@
 
 - (void)viewDidLoad
 {
-    loginView.delegate = self;
     [super viewDidLoad];
+    loginView.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -58,7 +58,6 @@
 // Logged-in user experience
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
     NSLog( @"You're logged in as");
-    
-    
+    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"rootViewController"] animated:YES completion:nil];
 }
 @end
