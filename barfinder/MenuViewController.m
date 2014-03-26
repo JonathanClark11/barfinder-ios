@@ -27,6 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIImageView* tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg-menu.png"]];
+    [tempImageView setFrame:self.menuTable.frame];
+    self.menuTable.backgroundView = tempImageView;
 	// Do any additional setup after loading the view.
     
 }
@@ -55,6 +59,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    
     switch ([indexPath row]) {
         case 0:
             cell.textLabel.text = @"Home";
@@ -64,6 +69,7 @@
             break;
         case 2:
             cell.textLabel.text = @"Buddies";
+        
             break;
         case 3:
             cell.textLabel.text = @"Places";
