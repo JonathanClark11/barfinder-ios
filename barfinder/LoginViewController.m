@@ -58,5 +58,7 @@
 // Logged-in user experience
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
     NSLog( @"You're logged in as");
+    
+    
 }
 @end

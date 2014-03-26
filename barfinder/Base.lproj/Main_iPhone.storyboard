@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="i9C-7h-WJA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aip-z3-ydt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJa-p0-CUZ" customClass="FBLoginView">
-                                <rect key="frame" x="40" y="398" width="240" height="52"/>
+                                <rect key="frame" x="40" y="398" width="240" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -117,8 +117,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8g-qa-YzF" customClass="FBLoginView">
-                                <rect key="frame" x="20" y="253" width="280" height="62"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-login" translatesAutoresizingMaskIntoConstraints="NO" id="HEJ-rE-1aQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8g-qa-YzF" customClass="FBLoginView">
+                                <rect key="frame" x="20" y="486" width="280" height="62"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.22183039460150999" green="0.45807599443486358" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -135,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqE-4n-xwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="181"/>
+            <point key="canvasLocation" x="-285" y="181"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="1Ic-f5-bmf">
@@ -232,7 +236,7 @@
                         <viewControllerLayoutGuide type="bottom" id="TK7-Lb-ckG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="P5h-UZ-BhO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -309,11 +313,11 @@
                         <viewControllerLayoutGuide type="bottom" id="BMo-xV-iRQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hf6-xh-eiz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uvH-Ue-iaQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                         </subviews>
@@ -338,7 +342,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cYX-oG-pGj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Cf-oo-e8T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WxC-BX-ozI">
@@ -457,10 +461,16 @@
         <scene sceneID="dng-Eu-Uly">
             <objects>
                 <navigationController storyboardIdentifier="mapView" automaticallyAdjustsScrollViewInsets="NO" id="eEJ-0G-EmA" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="99d-zN-UfH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="99d-zN-UfH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.20000000000000001" green="0.5725490196078431" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -477,9 +487,10 @@
                 <navigationController storyboardIdentifier="profileView" automaticallyAdjustsScrollViewInsets="NO" id="yEo-3T-J7L" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="You" id="CTS-yL-SYV"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aZm-lm-c6o">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aZm-lm-c6o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20000000000000001" green="0.57254901960000004" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -581,9 +592,11 @@
             <objects>
                 <navigationController storyboardIdentifier="chatroomView" automaticallyAdjustsScrollViewInsets="NO" id="KyE-Hg-I6B" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cv3-ex-3dk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="cv3-ex-3dk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" cyan="0.78000000000000003" magenta="0.68000000000000005" yellow="0.58999999999999997" black="0.56999999999999995" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <color key="barTintColor" red="0.20000000000000001" green="0.57254901960000004" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -595,6 +608,9 @@
             <point key="canvasLocation" x="537" y="1547"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg-login" width="640" height="1136"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
