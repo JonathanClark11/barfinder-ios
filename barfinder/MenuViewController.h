@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
+#import "FacebookSDK/FacebookSDK.h"
 
 @interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView* menuTable;

@@ -100,7 +100,8 @@
     } else if ([cellText isEqualToString:@"Achievements"]) {
 
     } else if ([cellText isEqualToString:@"Logout"]) {
-
+        [FBSession.activeSession closeAndClearTokenInformation];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 
 }

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "FacebookSDK/FacebookSDK.h"
+#import "AppDelegate.h"
 
-@interface LoginViewController : UIViewController <FBLoginViewDelegate>
-@property (weak, nonatomic) IBOutlet FBLoginView *loginView;
+@interface LoginViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+- (IBAction)loginButton:(id)sender;
 @end
