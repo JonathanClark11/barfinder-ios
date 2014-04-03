@@ -57,11 +57,11 @@
 {
     NSLog(@"Loaded Venue Info");
     //load image
-//    UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[venue valueForKey:@"logo"]]]];
+    UIImage *logoimage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[venue valueForKey:@"logo"]]]];
     
-    NSURL *url = [NSURL URLWithString:@"http://www.youqueue.ca/public/images/bars/4130/logo.png"];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *logoimage = [UIImage imageWithData:data];
+//    NSURL *url = [NSURL URLWithString:@"http://www.youqueue.ca/public/images/bars/4130/logo.png"];
+//    NSData *data = [NSData dataWithContentsOfURL:url];
+//    UIImage *logoimage = [UIImage imageWithData:data];
     
     
     
