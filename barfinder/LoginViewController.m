@@ -7,29 +7,16 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
-//@synthesize loginView;
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    loginView.readPermissions = @[@"basic_info",@"email"];
-//    loginView.frame = self.view.bounds;
-//    loginView.delegate = self;
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -40,7 +27,6 @@
     // UI. However, since this is not user intitiated, do not show the login UX.
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     [appDelegate openSessionWithAllowLoginUI:NO];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,9 +39,7 @@
 #pragma mark facebook login
 - (void)sessionStateChanged:(NSNotification*)notification {
     if (FBSession.activeSession.isOpen) {
-        [self.loginButton setTitle:@"Logout" forState:UIControlStateNormal];
-//        self.userInfoTextView.hidden = NO;
-        
+        //They're already logged in :)
         [FBRequestConnection
          startForMeWithCompletionHandler:^(FBRequestConnection *connection,
                                            id<FBGraphUser> user,
@@ -64,8 +48,20 @@
                  //log output
                  [FBSettings setLoggingBehavior:[NSSet setWithObjects:
                                                  FBLoggingBehaviorFBRequests, nil]];
+                 
+                 User *userObj=[User getInstance]; //get user object
+                 userObj.name = user.name; //set name here
+                 userObj.birthday = user.birthday;
+                 userObj.email = [user objectForKey:@"email"];
+                 userObj.education = [user objectForKey:@"education"];
+                 userObj.location = [user.location objectForKey:@"name"];
+                 userObj.gender = [user objectForKey:@"gender"];
+                 
+                 
+                 
                  NSString *userInfo = @" ";
                  
+
                  
                  // Example: typed access (name)
                  // - no special permissions required
@@ -114,16 +110,15 @@
                                   languageNames]];
                  }
                  
-                 // Display the user info
-                 NSLog(@"%@",  userInfo);
+                 NSLog(@"%@",  userInfo); // Display the user info
+                 
+                 //Now show the maps view
                  [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"rootViewController"] animated:YES completion:nil];
 
              }
          }];
-
-    }else{
-        [self.loginButton setTitle:@"Login with Facebook" forState:UIControlStateNormal];
-//        self.userInfoTextView.hidden = YES;
+    } else {
+        //TODO: Ensure the login screen is displayed
     }
 }
 

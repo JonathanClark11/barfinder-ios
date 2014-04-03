@@ -16,6 +16,7 @@
 		594315F818E35D32001B48C3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594315F718E35D32001B48C3 /* LoginViewController.m */; };
 		596DBE1918CF3B89007B66CC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596DBE1818CF3B89007B66CC /* PhotoViewController.m */; };
 		596DBE1D18CF463A007B66CC /* BarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596DBE1C18CF463A007B66CC /* BarInfoViewController.m */; };
+		597AE00918EDAA51000E64D7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 597AE00818EDAA51000E64D7 /* User.m */; };
 		59E9309618E0AAA100FE33B3 /* rightPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E9309518E0AAA100FE33B3 /* rightPanelViewController.m */; };
 		59E9309918E0B69B00FE33B3 /* TCPChatClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E9309818E0B69B00FE33B3 /* TCPChatClient.m */; };
 		59E9309C18E0BB7400FE33B3 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E9309B18E0BB7400FE33B3 /* ChatViewController.m */; };
@@ -74,6 +75,8 @@
 		596DBE1818CF3B89007B66CC /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		596DBE1B18CF463A007B66CC /* BarInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarInfoViewController.h; sourceTree = "<group>"; };
 		596DBE1C18CF463A007B66CC /* BarInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarInfoViewController.m; sourceTree = "<group>"; };
+		597AE00718EDAA51000E64D7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		597AE00818EDAA51000E64D7 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		59E9309418E0AAA100FE33B3 /* rightPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rightPanelViewController.h; sourceTree = "<group>"; };
 		59E9309518E0AAA100FE33B3 /* rightPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rightPanelViewController.m; sourceTree = "<group>"; };
 		59E9309718E0B69A00FE33B3 /* TCPChatClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPChatClient.h; sourceTree = "<group>"; };
@@ -220,6 +223,15 @@
 			name = barinfo;
 			sourceTree = "<group>";
 		};
+		597AE00618EDAA22000E64D7 /* global */ = {
+			isa = PBXGroup;
+			children = (
+				597AE00718EDAA51000E64D7 /* User.h */,
+				597AE00818EDAA51000E64D7 /* User.m */,
+			);
+			name = global;
+			sourceTree = "<group>";
+		};
 		EBDF3B7018B56A3B00A8C6C1 = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +270,7 @@
 		EBDF3B8218B56A3C00A8C6C1 /* barfinder */ = {
 			isa = PBXGroup;
 			children = (
+				597AE00618EDAA22000E64D7 /* global */,
 				591F0D8518DAA17E008F19A7 /* panels */,
 				591F0D7B18DA6982008F19A7 /* barfinderapi */,
 				596DBE1A18CF4615007B66CC /* barinfo */,
@@ -451,6 +464,7 @@
 				590AF84018DD324D0008933C /* VenueInfo.m in Sources */,
 				EB53CB2718B81AE800E84F3C /* VenueBuilder.m in Sources */,
 				591F0D8118DA70A7008F19A7 /* MenuViewController.m in Sources */,
+				597AE00918EDAA51000E64D7 /* User.m in Sources */,
 				596DBE1D18CF463A007B66CC /* BarInfoViewController.m in Sources */,
 				591F0D8018DA70A7008F19A7 /* RootViewController.m in Sources */,
 				EBDF3B8D18B56A3C00A8C6C1 /* AppDelegate.m in Sources */,

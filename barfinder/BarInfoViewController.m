@@ -10,6 +10,7 @@
 #import "BarfinderAPIManager.h"
 #import "BarfinderAPICommunicator.h"
 #import "VenueInfo.h"
+#import "User.h"
 
 @interface BarInfoViewController () <BarfinderAPIManagerDelegate> {
     BarfinderAPIManager *_manager;
