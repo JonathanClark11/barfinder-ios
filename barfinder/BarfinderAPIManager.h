@@ -18,4 +18,8 @@
 
 - (void)fetchVenues;
 - (void)fetchVenueInfo:(NSString*)vid;
+
+- (void)postCheckin:(NSString*)venueid :(NSString*)userid;
+- (void)getCheckins:(NSString*)venueid;
+
 @end

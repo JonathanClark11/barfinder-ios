@@ -13,6 +13,10 @@
 		590AF84618DD40CD0008933C /* VenueAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF84518DD40CD0008933C /* VenueAnnotation.m */; };
 		591F0D8018DA70A7008F19A7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591F0D7C18DA70A7008F19A7 /* RootViewController.m */; };
 		591F0D8118DA70A7008F19A7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591F0D7E18DA70A7008F19A7 /* MenuViewController.m */; };
+		594286F418F72133003D1BA3 /* CheckinInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 594286F318F72133003D1BA3 /* CheckinInfo.m */; };
+		594286F718F72184003D1BA3 /* CheckinInfoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 594286F618F72184003D1BA3 /* CheckinInfoBuilder.m */; };
+		594286FA18F723BF003D1BA3 /* PostResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 594286F918F723BF003D1BA3 /* PostResponse.m */; };
+		594286FD18F7284A003D1BA3 /* PostResponseBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 594286FC18F7284A003D1BA3 /* PostResponseBuilder.m */; };
 		594315F818E35D32001B48C3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594315F718E35D32001B48C3 /* LoginViewController.m */; };
 		596DBE1918CF3B89007B66CC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596DBE1818CF3B89007B66CC /* PhotoViewController.m */; };
 		596DBE1D18CF463A007B66CC /* BarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596DBE1C18CF463A007B66CC /* BarInfoViewController.m */; };
@@ -68,6 +72,14 @@
 		591F0D7D18DA70A7008F19A7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		591F0D7E18DA70A7008F19A7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		591F0D7F18DA70A7008F19A7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		594286F218F72133003D1BA3 /* CheckinInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinInfo.h; sourceTree = "<group>"; };
+		594286F318F72133003D1BA3 /* CheckinInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinInfo.m; sourceTree = "<group>"; };
+		594286F518F72184003D1BA3 /* CheckinInfoBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinInfoBuilder.h; sourceTree = "<group>"; };
+		594286F618F72184003D1BA3 /* CheckinInfoBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinInfoBuilder.m; sourceTree = "<group>"; };
+		594286F818F723BF003D1BA3 /* PostResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostResponse.h; sourceTree = "<group>"; };
+		594286F918F723BF003D1BA3 /* PostResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostResponse.m; sourceTree = "<group>"; };
+		594286FB18F7284A003D1BA3 /* PostResponseBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostResponseBuilder.h; sourceTree = "<group>"; };
+		594286FC18F7284A003D1BA3 /* PostResponseBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostResponseBuilder.m; sourceTree = "<group>"; };
 		594315F618E35D32001B48C3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		594315F718E35D32001B48C3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		595FE2A618B6FF2300E5D6A6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -161,6 +173,14 @@
 				EB53CB2218B81AE800E84F3C /* VenueBuilder.m */,
 				590AF84118DD34780008933C /* VenueInfoBuilder.h */,
 				590AF84218DD34780008933C /* VenueInfoBuilder.m */,
+				594286F218F72133003D1BA3 /* CheckinInfo.h */,
+				594286F318F72133003D1BA3 /* CheckinInfo.m */,
+				594286F518F72184003D1BA3 /* CheckinInfoBuilder.h */,
+				594286F618F72184003D1BA3 /* CheckinInfoBuilder.m */,
+				594286F818F723BF003D1BA3 /* PostResponse.h */,
+				594286F918F723BF003D1BA3 /* PostResponse.m */,
+				594286FB18F7284A003D1BA3 /* PostResponseBuilder.h */,
+				594286FC18F7284A003D1BA3 /* PostResponseBuilder.m */,
 			);
 			name = barfinderapi_models;
 			sourceTree = "<group>";
@@ -467,13 +487,17 @@
 				597AE00918EDAA51000E64D7 /* User.m in Sources */,
 				596DBE1D18CF463A007B66CC /* BarInfoViewController.m in Sources */,
 				591F0D8018DA70A7008F19A7 /* RootViewController.m in Sources */,
+				594286F418F72133003D1BA3 /* CheckinInfo.m in Sources */,
 				EBDF3B8D18B56A3C00A8C6C1 /* AppDelegate.m in Sources */,
 				59E9309618E0AAA100FE33B3 /* rightPanelViewController.m in Sources */,
+				594286FA18F723BF003D1BA3 /* PostResponse.m in Sources */,
 				590AF84618DD40CD0008933C /* VenueAnnotation.m in Sources */,
 				EBDF3B8918B56A3C00A8C6C1 /* main.m in Sources */,
 				59E9309C18E0BB7400FE33B3 /* ChatViewController.m in Sources */,
 				EB53CB2F18B81AF000E84F3C /* BarfinderAPICommunicator.m in Sources */,
+				594286F718F72184003D1BA3 /* CheckinInfoBuilder.m in Sources */,
 				59E9309918E0B69B00FE33B3 /* TCPChatClient.m in Sources */,
+				594286FD18F7284A003D1BA3 /* PostResponseBuilder.m in Sources */,
 				EB53CB2618B81AE800E84F3C /* Venue.m in Sources */,
 				EB53CB2518B81AE800E84F3C /* MapViewController.m in Sources */,
 				596DBE1918CF3B89007B66CC /* PhotoViewController.m in Sources */,

@@ -47,6 +47,8 @@
     _manager.communicator.delegate = _manager;
     _manager.delegate = self;
     
+    [self.mapView setShowsPointsOfInterest:NO];
+    
     [_manager fetchVenues];
     
 }

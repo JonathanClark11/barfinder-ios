@@ -50,6 +50,7 @@
                                                  FBLoggingBehaviorFBRequests, nil]];
                  
                  User *userObj=[User getInstance]; //get user object
+                 userObj.uid = user.id;
                  userObj.name = user.name; //set name here
                  userObj.birthday = user.birthday;
                  userObj.email = [user objectForKey:@"email"];
@@ -63,6 +64,7 @@
                  
 
                  
+                 userInfo = [userInfo stringByAppendingString:[NSString stringWithFormat:@"UID: %@\n\n", user.id]];
                  // Example: typed access (name)
                  // - no special permissions required
                  userInfo = [userInfo stringByAppendingString:[NSString stringWithFormat:@"Name: %@\n\n", user.name]];

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "VenueInfo.h"
+#import "CheckinInfo.h"
+#import "PostResponse.h"
 
 @protocol BarfinderAPIManagerDelegate
 - (void)didReceiveVenues:(NSArray *)venues;
@@ -15,4 +17,10 @@
 
 - (void)didReceiveVenueInfo:(VenueInfo *)venue;
 - (void)fetchingVenueInfoFailedWithError:(NSError *)error;
+
+- (void)didReceiveCheckins:(CheckinInfo *)checkins;
+- (void)fetchingCheckinsFailedWithError:(NSError *)error;
+
+- (void)didReceivePostResponse:(PostResponse*)response;
+- (void)fetchingPostResponseFailedWithError:(NSError *)error;
 @end

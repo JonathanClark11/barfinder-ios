@@ -14,4 +14,9 @@
 @property (weak, nonatomic) id<BarfinderAPICommDelegate> delegate;
 - (void)getVenues;
 - (void)getVenueInfo:(NSString*)vid;
+
+
+- (void) postCheckins:(NSString*)vid:(NSString*)uid;
+- (void) getCheckins:(NSString*)vid;
+
 @end

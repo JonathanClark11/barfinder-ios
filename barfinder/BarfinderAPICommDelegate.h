@@ -14,4 +14,10 @@
 
 - (void)receivedVenueInfoJSON:(NSData *)objectNotation;
 - (void)fetchingVenueInfoFailedWithError:(NSError *)error;
+
+- (void)receivedCheckinsJSON:(NSData *)objectNotation;
+- (void)fetchingCheckinsFailedWithError:(NSError *)error;
+
+/*Generic response*/
+- (void)receivedPostJSON:(NSData *)objectNotation;
 @end

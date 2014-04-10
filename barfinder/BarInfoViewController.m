@@ -25,9 +25,12 @@
 @synthesize venueEvents;
 @synthesize venueLogo;
 @synthesize venueName;
+@synthesize venueBackground;
 
 @synthesize loadingSpinner;
 @synthesize loadingView;
+
+@synthesize checkinButton;
 
 @synthesize infoContainer;
 
@@ -60,18 +63,20 @@
     //load image
     UIImage *logoimage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[venue valueForKey:@"logo"]]]];
     
-//    NSURL *url = [NSURL URLWithString:@"http://www.youqueue.ca/public/images/bars/4130/logo.png"];
-//    NSData *data = [NSData dataWithContentsOfURL:url];
-//    UIImage *logoimage = [UIImage imageWithData:data];
-    
+//    UIImage *bgimage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[venue valueForKey:@"image_mobile"]]]];
     
     
     [venueName performSelectorOnMainThread:@selector(setText:) withObject:[venue valueForKey:@"name"] waitUntilDone:NO];
     [venueAddress performSelectorOnMainThread:@selector(setText:) withObject:[venue valueForKey:@"address"] waitUntilDone:NO];
     [venueDescription performSelectorOnMainThread:@selector(setText:) withObject:[venue valueForKey:@"type"] waitUntilDone:NO];
+    
     [venueLogo performSelectorOnMainThread:@selector(setImage:) withObject:logoimage waitUntilDone:NO];
     
     [venueLogo performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:YES];
+    
+//    [venueBackground performSelectorOnMainThread:@selector(setImage:) withObject:bgimage waitUntilDone:NO];
+    
+//    [venueBackground performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:YES];
     
     //Transfer views
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -94,4 +99,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)checkinAction:(id)sender {
+    User *userObj=[User getInstance]; //get user object
+    [_manager postCheckin:venueid :userObj.uid];
+}
+
+- (void)didReceivePostResponse:(PostResponse*)response {
+    if ([response.response isEqualToString:@"success"]) {
+        NSLog(@"checked in");
+        //todo: change ui
+    } else {
+        NSLog(@"Failed to checkin");
+    }
+}
+- (void) fetchingPostResponseFailedWithError:(NSError *)error {
+    NSLog(@"Failed to checkin");
+}
 @end

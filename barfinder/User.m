@@ -9,6 +9,7 @@
 #import "User.h"
 
 @implementation User
+@synthesize uid;
 @synthesize name;
 @synthesize email;
 @synthesize birthday;

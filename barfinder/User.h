@@ -15,6 +15,7 @@
      userObj.name= @"NAME"; //set name here
  */
 @interface User : NSObject {
+    NSString *uid;
     NSString *name;
     NSString *email;
     NSString *birthday;
@@ -22,6 +23,7 @@
     NSString *education;
     NSString *location;
 }
+@property(nonatomic,retain)NSString *uid;
 @property(nonatomic,retain)NSString *name;
 @property(nonatomic,retain)NSString *email;
 @property(nonatomic,retain)NSString *birthday;

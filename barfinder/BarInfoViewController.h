@@ -17,9 +17,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *venueEvents;
 @property (weak, nonatomic) IBOutlet UILabel *venueCover;
 @property (weak, nonatomic) IBOutlet UIImageView *venueLogo;
+@property (weak, nonatomic) IBOutlet UIImageView *venueBackground;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingSpinner;
+@property (weak, nonatomic) IBOutlet UIButton *checkinButton;
 
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIView *infoContainer;
+
+- (IBAction)checkinAction:(id)sender;
+
 @end

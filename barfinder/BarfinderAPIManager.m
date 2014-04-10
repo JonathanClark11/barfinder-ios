@@ -11,6 +11,12 @@
 #import "VenueInfoBuilder.h"
 #import "BarfinderAPICommunicator.h"
 #import "VenueInfo.h"
+
+#import "CheckinInfo.h"
+#import "CheckinINfoBuilder.h"
+
+#import "PostResponseBuilder.h"
+
 @implementation BarfinderAPIManager
 
 - (void)fetchVenues
@@ -21,6 +27,14 @@
 {
     [self.communicator getVenueInfo:vid];
 }
+
+- (void)postCheckin:(NSString*)venueid :(NSString*)userid {
+    [self.communicator postCheckins:venueid :userid];
+}
+- (void)getCheckins:(NSString*)venueid {
+    [self.communicator getCheckins:venueid];
+}
+
 
 #pragma mark - BarfinderAPICommunicatorDelegate
 
@@ -56,6 +70,31 @@
 - (void)fetchingVenueInfoFailedWithError:(NSError *)error
 {
     [self.delegate fetchingVenueInfoFailedWithError:error];
+}
+
+- (void)receivedCheckinsJSON:(NSData *)objectNotation {
+    NSError *error = nil;
+    CheckinInfo *info = [CheckinInfoBuilder checkinInfoFromJSON:objectNotation error:&error];
+    if (error != nil) {
+        [self.delegate fetchingCheckinsFailedWithError:error];
+    } else {
+        [self.delegate didReceiveCheckins:info];
+    }
+}
+
+- (void)fetchingCheckinsFailedWithError:(NSError *)error {
+    [self.delegate fetchingCheckinsFailedWithError:error];
+}
+
+
+- (void)receivedPostJSON:(NSData*)objectNotation {
+    NSError *error = nil;
+    PostResponse *response = [PostResponseBuilder postResponseFromJSON:objectNotation error:&error];
+    if (error != nil) {
+        [self.delegate fetchingPostResponseFailedWithError:error];
+    } else {
+        [self.delegate didReceivePostResponse:response];
+    }
 }
 
 @end

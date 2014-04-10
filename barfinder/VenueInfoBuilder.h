@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VenueInfo.h"
 
 @interface VenueInfoBuilder : NSObject
-+ (NSArray *)venueInfoFromJSON:(NSData *)objectNotation error:(NSError **)error;
++ (VenueInfo *)venueInfoFromJSON:(NSData *)objectNotation error:(NSError **)error;
 @end
