@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface VenueInfoContainerViewController : UIViewController
-- (void)swapViewControllers:(NSString*)segueIdentifier;
 @end

@@ -612,7 +612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOs-Nk-tYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="43"/>
+            <point key="canvasLocation" x="2509" y="43"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YI9-w2-9rz">
@@ -674,27 +674,59 @@
             </objects>
             <point key="canvasLocation" x="2928" y="511"/>
         </scene>
-        <!--View Controller-->
+        <!--Photos View Controller-->
         <scene sceneID="Q5n-li-xQd">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="oIk-XI-PQC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UAf-SO-yKT"/>
-                        <viewControllerLayoutGuide type="bottom" id="ClF-8m-gi6"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yIX-Oo-Sao">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="oIk-XI-PQC" customClass="PhotosViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Pl4-2R-kXC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="332"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-yv-M1z">
-                                <rect key="frame" x="132" y="20" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IMO-kF-tW1" customClass="NHBalancedFlowLayout">
+                            <size key="itemSize" width="200" height="200"/>
+                            <size key="headerReferenceSize" width="50" height="0.0"/>
+                            <size key="footerReferenceSize" width="50" height="100"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="kBF-Qn-Tvb" customClass="ImageCell">
+                                <rect key="frame" x="60" y="0.0" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aLA-l3-Ntc">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aLA-l3-Ntc" secondAttribute="bottom" id="2xs-AJ-SqF"/>
+                                    <constraint firstItem="aLA-l3-Ntc" firstAttribute="top" secondItem="kBF-Qn-Tvb" secondAttribute="top" id="CUO-Si-OoH"/>
+                                    <constraint firstItem="aLA-l3-Ntc" firstAttribute="leading" secondItem="kBF-Qn-Tvb" secondAttribute="leading" id="HHe-1s-wlh"/>
+                                    <constraint firstAttribute="trailing" secondItem="aLA-l3-Ntc" secondAttribute="trailing" id="MbE-sb-NIv"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="200"/>
+                                <connections>
+                                    <outlet property="imageView" destination="aLA-l3-Ntc" id="9Ss-Zb-1sk"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="lro-S1-El7">
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterView" id="YS0-KT-bgt">
+                            <rect key="frame" x="0.0" y="200" width="320" height="100"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="oIk-XI-PQC" id="jkp-PZ-DO5"/>
+                            <outlet property="delegate" destination="oIk-XI-PQC" id="geF-tH-fAl"/>
+                        </connections>
+                    </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VA3-HH-bvC"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

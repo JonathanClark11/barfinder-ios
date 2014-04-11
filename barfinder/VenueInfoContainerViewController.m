@@ -9,9 +9,6 @@
 #import "VenueInfoContainerViewController.h"
 
 #define SegueIdentifierFirst @"embedFriends"
-#define SegueIdentifierSecond @"embedPeople"
-#define SegueIdentifierThird @"embedPhotos"
-#define SegueIdentifierFourth @"embedChat"
 
 @interface VenueInfoContainerViewController ()
 @property (strong, nonatomic) NSString *currentSegueIdentifier;
@@ -23,35 +20,41 @@
 {
     [super viewDidLoad];
     
-    self.currentSegueIdentifier = SegueIdentifierFirst;
-    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    [self performSegueWithIdentifier:SegueIdentifierFirst sender:nil];
+}
+
+- (BOOL)childViewContainsSegue:(UIStoryboardSegue*)segue {
+    for (UIViewController *vc in self.childViewControllers) {
+        if ([vc isEqual:segue.destinationViewController]) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+-(NSInteger)getCurrentChildViewIndex:(UIStoryboardSegue*)segue {
+    NSInteger counter = 0;
+    for (UIViewController *vc in self.childViewControllers) {
+        if ([vc isEqual:segue.sourceViewController]) {
+            return counter;
+        }
+        counter++;
+    }
+    return -1;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:SegueIdentifierFirst])
-    {
-        if (self.childViewControllers.count > 0) {
-            [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
-        }
-        else {
+    if (!([self.currentSegueIdentifier isEqualToString:segue.identifier])) {
+        self.currentSegueIdentifier = segue.identifier;
+        if (self.childViewControllers.count > 0 && [self childViewContainsSegue:segue] == TRUE) {
+            [self swapFromViewController:[self.childViewControllers objectAtIndex:[self getCurrentChildViewIndex:segue]] toViewController:segue.destinationViewController];
+        } else {
             [self addChildViewController:segue.destinationViewController];
             ((UIViewController *)segue.destinationViewController).view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             [self.view addSubview:((UIViewController *)segue.destinationViewController).view];
             [segue.destinationViewController didMoveToParentViewController:self];
         }
-    }
-    else if ([segue.identifier isEqualToString:SegueIdentifierSecond])
-    {
-        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
-    }
-    else if ([segue.identifier isEqualToString:SegueIdentifierThird])
-    {
-        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
-    }
-    else if ([segue.identifier isEqualToString:SegueIdentifierFourth])
-    {
-        [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:segue.destinationViewController];
     }
 }
 
@@ -65,14 +68,6 @@
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
     }];
-}
-
-- (void)setViewController:(NSString*)segueIdentifier;
-{
-    if (!([self.currentSegueIdentifier isEqualToString:segueIdentifier])) {
-        self.currentSegueIdentifier = segueIdentifier;
-        [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
-    }
 }
 
 @end

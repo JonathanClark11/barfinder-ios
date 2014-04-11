@@ -62,7 +62,7 @@
 
 - (void)didReceiveVenueInfo:(VenueInfo *)venue
 {
-    NSLog(@"Loaded Venue Info");
+//    NSLog(@"Loaded Venue Info");
     
     UIImage *bgimage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[venue valueForKey:@"image_mobile"]]]];
     //load image

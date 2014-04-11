@@ -24,3 +24,9 @@
 #define COCOAPODS_VERSION_MINOR_JSQSystemSoundPlayer 4
 #define COCOAPODS_VERSION_PATCH_JSQSystemSoundPlayer 0
 
+// NHBalancedFlowLayout
+#define COCOAPODS_POD_AVAILABLE_NHBalancedFlowLayout
+#define COCOAPODS_VERSION_MAJOR_NHBalancedFlowLayout 0
+#define COCOAPODS_VERSION_MINOR_NHBalancedFlowLayout 2
+#define COCOAPODS_VERSION_PATCH_NHBalancedFlowLayout 0
+
