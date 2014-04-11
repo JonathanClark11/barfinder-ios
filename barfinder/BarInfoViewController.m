@@ -26,6 +26,7 @@
 @synthesize venueLogo;
 @synthesize venueName;
 @synthesize venueBackground;
+@synthesize venueTwitter;
 
 @synthesize loadingSpinner;
 @synthesize loadingView;
@@ -33,6 +34,8 @@
 @synthesize checkinButton;
 
 @synthesize infoContainer;
+
+@synthesize segmentTabs;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -60,23 +63,25 @@
 - (void)didReceiveVenueInfo:(VenueInfo *)venue
 {
     NSLog(@"Loaded Venue Info");
+    
+    UIImage *bgimage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[venue valueForKey:@"image_mobile"]]]];
     //load image
     UIImage *logoimage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[venue valueForKey:@"logo"]]]];
     
-//    UIImage *bgimage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[venue valueForKey:@"image_mobile"]]]];
+    
     
     
     [venueName performSelectorOnMainThread:@selector(setText:) withObject:[venue valueForKey:@"name"] waitUntilDone:NO];
     [venueAddress performSelectorOnMainThread:@selector(setText:) withObject:[venue valueForKey:@"address"] waitUntilDone:NO];
-    [venueDescription performSelectorOnMainThread:@selector(setText:) withObject:[venue valueForKey:@"type"] waitUntilDone:NO];
+    [venueTwitter performSelectorOnMainThread:@selector(setText:) withObject:[venue valueForKey:@"twitter"] waitUntilDone:NO];
     
     [venueLogo performSelectorOnMainThread:@selector(setImage:) withObject:logoimage waitUntilDone:NO];
     
-    [venueLogo performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:YES];
+    [venueLogo performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO];
     
-//    [venueBackground performSelectorOnMainThread:@selector(setImage:) withObject:bgimage waitUntilDone:NO];
+    [venueBackground performSelectorOnMainThread:@selector(setImage:) withObject:bgimage waitUntilDone:NO];
     
-//    [venueBackground performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:YES];
+    [venueBackground performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:YES];
     
     //Transfer views
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -114,5 +119,31 @@
 }
 - (void) fetchingPostResponseFailedWithError:(NSError *)error {
     NSLog(@"Failed to checkin");
+}
+
+-(IBAction)changeSegment:(id)sender{
+	if(segmentTabs.selectedSegmentIndex == 0){
+		NSLog(@"FRIENDS");
+        [self.containerViewController performSegueWithIdentifier:@"embedFriends" sender:nil];
+    }
+	if(segmentTabs.selectedSegmentIndex == 1){
+        NSLog(@"PEOPLE");
+        [self.containerViewController performSegueWithIdentifier:@"embedPeople" sender:nil];
+	}
+    if(segmentTabs.selectedSegmentIndex == 2){
+        NSLog(@"PHOTOS");
+        [self.containerViewController performSegueWithIdentifier:@"embedPhotos" sender:nil];
+	}
+    if(segmentTabs.selectedSegmentIndex == 3){
+        NSLog(@"CHAT");
+        [self.containerViewController performSegueWithIdentifier:@"embedChat" sender:nil];
+	}
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"embedContainer"]) {
+        self.containerViewController = segue.destinationViewController;
+    }
 }
 @end

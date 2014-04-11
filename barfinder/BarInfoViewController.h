@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VenueInfoContainerViewController.h"
 
 @interface BarInfoViewController : UIViewController
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *venueDescription;
 @property (weak, nonatomic) IBOutlet UILabel *venueEvents;
 @property (weak, nonatomic) IBOutlet UILabel *venueCover;
+@property (weak, nonatomic) IBOutlet UILabel *venueTwitter;
 @property (weak, nonatomic) IBOutlet UIImageView *venueLogo;
 @property (weak, nonatomic) IBOutlet UIImageView *venueBackground;
 
@@ -24,6 +26,12 @@
 
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
 @property (weak, nonatomic) IBOutlet UIView *infoContainer;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentTabs;
+
+@property (nonatomic, weak) VenueInfoContainerViewController *containerViewController;
+
+
+-(IBAction)changeSegment:(id)sender;
 
 - (IBAction)checkinAction:(id)sender;
 
